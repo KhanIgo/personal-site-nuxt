@@ -98,7 +98,10 @@ export default {
           {rel: 'stylesheet', href: require('~/assets/css/coloring.css')},
         ],
         script: [
-
+          { src: '/js/plugins.js', type: 'text/javascript' },
+          { src: "/js/designesia.js" },
+          { src: "https://www.google.com/recaptcha/api.js", async: true, defer: true },
+          { src: "/js/form.js" },
         ],
       }
     }
