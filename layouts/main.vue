@@ -92,10 +92,10 @@ export default {
     head() {
       return {
         link: [
-          {rel: 'stylesheet', href: require('~/assets/css/bootstrap.min.css')},
-          {rel: 'stylesheet', href: require('~/assets/css/plugins.css')},
-          {rel: 'stylesheet', href: require('~/assets/css/style.css')},
-          {rel: 'stylesheet', href: require('~/assets/css/coloring.css')},
+          {rel: 'stylesheet', href: '/css/bootstrap.min.css'},
+          {rel: 'stylesheet', href: '/css/plugins.css'},
+          {rel: 'stylesheet', href: '/css/style.css'},
+          {rel: 'stylesheet', href: '/css/coloring.css'},
         ],
         script: [
           { src: '/js/plugins.js', type: 'text/javascript' },
