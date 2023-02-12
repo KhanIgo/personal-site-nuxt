@@ -1,69 +1,24 @@
 <template>
   <section id="section-contact" class="jarallax">
     <div class="de-gradient-edge-top"></div>
-    <img src="images/background/5.jpg" class="jarallax-img" alt="">
+    <img :src="bgImage" class="jarallax-img" alt="">
     <div class="container z-index-1000">
       <div class="row">
-        <div class="col-md-12 text-center wow fadeInUp">
-          <h2>Contact Me</h2>
+        <div v-if="title" class="col-md-12 text-center wow fadeInUp">
+          <h2>{{ title }}</h2>
           <div class="space-border"></div>
         </div>
         <div class="col-lg-8 offset-lg-2 wow fadeInUp">
           <div class="contact_form_wrapper">
-            <form name="contactForm" id="contact_form" class="form-border" method="post" action="#">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="field-set">
-                    <input type="text" name="Name" id="name" class="form-control" placeholder="Your Name" required>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="field-set">
-                    <input type="text" name="Email" id="email" class="form-control" placeholder="Your Email" required>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="field-set">
-                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone" required>
-                  </div>
-                </div>
-              </div>
-              <div class="text-center">
-                <div class="field-set">
-                  <textarea name="message" id="message" class="form-control" placeholder="Your Message" required></textarea>
-                </div>
-                <div class="g-recaptcha" data-sitekey="copy-your-site-key-here"></div>
-                <div id='submit' class="mt10">
-                  <input type='submit' id='send_message' value='Send Message' class="btn-main">
-                </div>
-
-                <div id="success_message" class='success'>
-                  Your message has been sent successfully. Refresh this page if you want to send more messages.
-                </div>
-                <div id="error_message" class='error'>
-                  Sorry there was an error sending your form.
-                </div>
-
-              </div>
-            </form>
+            <contact-form />
           </div>
           <div class="spacer-double"></div>
           <div class="row text-center wow fadeInUp">
-            <div class="col-md-4">
-              <div class="wm-1"></div>
-              <h6>Email Me</h6>
-              <p>contact@kyrosnoriaki.com</p>
-            </div>
-            <div class="col-md-4">
-              <div class="wm-1"></div>
-              <h6>Call Me</h6>
-              <p>+1 700 333 92 96</p>
-            </div>
-            <div class="col-md-4">
-              <div class="wm-1"></div>
-              <h6>Address</h6>
-              <p>Collins Street West, Louisiana, Bayerfurt, USA</p>
-            </div>
+            <contact-item
+              v-for="(item, index) in items" :key="index"
+              :title="item.title"
+              :text="item.text"
+            />
           </div>
         </div>
       </div>
@@ -73,8 +28,16 @@
 </template>
 
 <script>
+import ContactForm from "~/components/forms/ContactForm";
+import ContactItem from "~/components/elements/contacts/ContactItem";
 export default {
-  name: "SectionContact"
+  name: "SectionContact",
+  components: { ContactForm, ContactItem },
+  props: {
+    title: { type: String, default: '' },
+    bgImage: { type: String, default: '' },
+    items: { type: Array, default: ()=>{} },
+  }
 }
 </script>
 

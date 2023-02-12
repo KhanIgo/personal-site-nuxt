@@ -30,9 +30,18 @@
       :items-col1="resumeItems1"
       :items-col2="resumeItems2"
     />
-    <section-facts />
-    <section-blog />
-    <section-contact />
+    <section-facts
+      :items="facts"
+    />
+    <section-blog
+      title="Recent Blog"
+      :posts="posts"
+    />
+    <section-contact
+      title="Contact Me"
+      bg-image="/images/background/5.jpg"
+      :items="contacts"
+    />
   </div>
 </template>
 
@@ -147,8 +156,66 @@ export default {
         text: '<span class="d_title">Artist of College</span><span class="d_company">University of Sydney</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi tempora perferendis vero officia enim impedit voluptatem dignissimos, veniam ratione est alias rerum aperiam, nam aliquam reprehenderit iste dolor.'
       },
     ];
+    const facts = [
+      { name: 'Hours of Works', value: '8240' },
+      { name: 'Projects Done', value: '315' },
+      { name: 'Satisfied Customers', value: '250' },
+      { name: 'Awards Winning', value: '32' },
+    ];
+    const posts = [
+      {
+        url: 'single-blog.html',
+        image: '/images/blog/1.jpg',
+        title: 'How to Make Better User Interface',
+        text: `Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad
+              laborum consectetur consequat...`,
+      },
+      {
+        url: 'single-blog.html',
+        image: '/images/blog/2.jpg',
+        title: '10 Web Design Tips From Experts',
+        text: `Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad
+              laborum consectetur consequat...`,
+      },
+      {
+        url: 'single-blog.html',
+        image: '/images/blog/3.jpg',
+        title: 'The Importance of Web Design',
+        text: `Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad
+              laborum consectetur consequat...`,
+      },
+      {
+        url: 'single-blog.html',
+        image: '/images/blog/4.jpg',
+        title: '10 Web Design Tips From Experts',
+        text: `Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad
+              laborum consectetur consequat...`,
+      },
+      {
+        url: 'single-blog.html',
+        image: '/images/blog/5.jpg',
+        title: 'The Importance of Web Design',
+        text: `Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad
+              laborum consectetur consequat...`,
+      },
+      {
+        url: 'single-blog.html',
+        image: '/images/blog/6.jpg',
+        title: 'Tips for Healthy Teeth',
+        text: `Dolore officia sint incididunt non excepteur ea mollit commodo ut enim reprehenderit cupidatat labore ad
+              laborum consectetur consequat...`,
+      }
+    ];
+    const contacts = [
+      { title: 'Email Me', text: 'contact@kyrosnoriaki.com' },
+      { title: 'Call Me', text: '+1 700 333 92 96' },
+      { title: 'Address', text: 'Collins Street West, Louisiana, Bayerfurt, USA' }
+    ];
     return {
-      locations, skills, services, cases, resumeItems1, resumeItems2
+      locations, skills,
+      services, cases,
+      resumeItems1, resumeItems2,
+      facts, posts, contacts
     };
   },
 
