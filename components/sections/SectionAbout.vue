@@ -10,27 +10,21 @@
           <p>{{ text }}</p>
         </div>
         <div class="spacer-single"></div>
-        <div
+        <skill-item
           v-for="(item, index) in skills" :key="index"
-          class="col-lg-3 position-relative wow fadeIn"
-          :data-wow-delay="((index+1)*0.2)+'s'">
-          <div class="position-relative">
-            <div class="progressbar" data-animate="false">
-              <div class="circle" :data-percent="item.percent">
-                <div></div>
-              </div>
-              <h4>{{ item.name }}</h4>
-            </div>
-          </div>
-        </div>
+          :percent="item.percent"
+          :name="item.name"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import SkillItem from "~/components/elements/about/SkillItem";
 export default {
   name: "SectionAbout",
+  components: { SkillItem },
   props: {
     title: {
       type: String,
