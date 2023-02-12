@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "IndexAbout",
+  name: "SectionAbout",
   props: {
     title: {
       type: String,

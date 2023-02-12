@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: "IndexHero",
+  name: "SectionIndexHero",
   props: {
     userName: {
       type: String,
