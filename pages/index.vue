@@ -1,5 +1,12 @@
 <template>
-  <IndexHero />
+  <IndexHero
+    userName="I Am Khan Igor"
+    :job="['Developer', 'Frontend', 'Fullstack', 'Freelancer']"
+    :locations="[{
+      loc1: 'Russia',
+      loc2: 'Khabarovsk',
+    }]"
+  />
 </template>
 
 <script>
@@ -8,26 +15,21 @@ export default {
   name: 'IndexPage',
   components: { IndexHero },
   layout: 'main',
-  mounted() {
-    jQuery(function($) {
-          $('.g-recaptcha').attr('data-theme', 'dark');
-        });
-    jQuery(document).ready(function() {
-      $(function() {
-        // jquery typed plugin
-        $(".typed").typed({
-          stringsElement: $('.typed-strings'),
-          typeSpeed: 100,
-          backDelay: 500,
-          loop: true,
-          contentType: 'html', // or text
-          // defaults to false for infinite loop
-          loopCount: false,
-          callback: function() { null; },
-          resetCallback: function() { newTyped(); }
-        });
-      });
-    });
+
+  head() {
+    return {
+      script: [
+        { src: "/js/recaptcha.js" },
+        { src: "/js/typed.js" }
+      ]
+    };
   }
 }
 </script>
+
+<style lang="scss">
+:root {
+  --primary-color: #CF1F1F;
+  --primary-color-rgb: 207, 31, 31;
+}
+</style>

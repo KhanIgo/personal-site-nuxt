@@ -4,22 +4,24 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12">
-            <h6 class="wow fadeInUp" data-wow-delay=".4s"><span class="id-color">I Am Kyros Noriaki</span></h6>
+            <h6 v-if="userName" class="wow fadeInUp" data-wow-delay=".4s">
+              <span class="id-color">{{ userName }}</span>
+            </h6>
             <div class="spacer-10"></div>
             <div class="h1_big text-white wow fadeInUp" data-wow-delay=".6s">
               <div class="typed-strings">
-                <p>Freelancer</p>
-                <p>Programmer</p>
-                <p>Photographer</p>
+                <p v-for="(jobItem, index) in job" :key="index">
+                  {{ jobItem }}
+                </p>
               </div>
               <div class="typed"></div>
             </div>
           </div>
           <div class="spacer-20"></div>
           <ul class="list_location wow fadeInUp" data-wow-delay=".8s">
-            <li><span>France</span>Bodin, Chauveau</li>
-            <li><span>USA</span>Louisiana, Bayerfurt</li>
-            <li><span>German</span>Hamburg, Dortmund</li>
+            <li v-for="(item, index) in locations" :key="index">
+              <span>{{ item.loc1 }}</span>{{ item.loc2 }}
+            </li>
           </ul>
         </div>
       </div>
@@ -36,6 +38,20 @@
 <script>
 export default {
   name: "IndexHero",
+  props: {
+    userName: {
+      type: String,
+      default: ''
+    },
+    job: {
+      type: Array,
+      default: ()=>{}
+    },
+    locations: {
+      type: Array,
+      default: ()=>{}
+    },
+  },
 }
 </script>
 
