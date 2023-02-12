@@ -4,6 +4,7 @@
     <!-- content begin -->
     <div id="content" class="no-bottom no-top">
       <div id="top"></div>
+      <modal />
       <preloader />
       <float-text />
       <nuxt />
@@ -21,8 +22,9 @@ import SiteFooter from "~/components/footer/SiteFooter";
 import BtnToTop from "~/components/elements/BtnToTop";
 import Preloader from "~/components/elements/Preloader";
 import FloatText from "~/components/elements/FloatText";
+import Modal from "~/components/ui/Modal";
 export default {
-  components: { SiteHeader, SiteFooter, Preloader, BtnToTop, FloatText },
+  components: { SiteHeader, SiteFooter, Preloader, BtnToTop, FloatText, Modal },
     head() {
       return {
         link: [
